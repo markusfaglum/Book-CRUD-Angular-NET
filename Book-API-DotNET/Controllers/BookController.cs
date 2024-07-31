@@ -1,0 +1,76 @@
+﻿using Book_API_DotNET.Data;
+using Book_API_DotNET.Entities;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace Book_API_DotNET.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BookController : ControllerBase
+    {
+        private readonly DataContext context;
+
+        public BookController(DataContext context)
+        {
+            this.context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Book>>> GetAllBooks()
+        {
+            var books = await context.Books.ToListAsync();
+            return Ok(books);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<Book>>> GetBookById(int id)
+        {
+            var book = await context.Books.FindAsync(id);
+            if (book == null)
+            {
+                return NotFound("Could not find book with id: "+ id);
+            }
+            return Ok(book);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<List<Book>>> CreateBook(Book book)
+        {
+            context.Books.Add(book);
+            await context.SaveChangesAsync();
+            return Ok(await context.Books.ToListAsync());
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<List<Book>>> UpdateBook(Book updatedBook)
+        {
+            var dbBook = await context.Books.FindAsync(updatedBook.Id);
+            if (dbBook == null)
+            {
+                return NotFound("Could not find book with id: " + updatedBook.Id);
+            }
+            dbBook.Title = updatedBook.Title;
+            dbBook.Author = updatedBook.Author;
+            dbBook.Description = updatedBook.Description;
+            dbBook.PublishingDate = updatedBook.PublishingDate;
+            await context.SaveChangesAsync();
+            return Ok(await context.Books.ToListAsync());
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<List<Book>>> DeleteBook(int id)
+        {
+            var dbBook = await context.Books.FindAsync(id);
+            if (dbBook == null)
+            {
+                return NotFound("Could not find book with id: " + id);
+            }
+            context.Books.Remove(dbBook);
+            await context.SaveChangesAsync();
+            return Ok("Deleted book, id: " + dbBook.Id + " title: " + dbBook.Title);
+        }
+
+    };
+}
