@@ -102,3 +102,16 @@ C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\obj\Debug\net8.0\ref
 C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\obj\Debug\net8.0\Book-API-DotNET.pdb
 C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\obj\Debug\net8.0\Book-API-DotNET.genruntimeconfig.cache
 C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\obj\Debug\net8.0\ref\Book-API-DotNET.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\obj\Debug\net8.0\Book-API-DotNET.sourcelink.json
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Scrutor.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\marku\source\repos\Book-API-DotNET\Book-API-DotNET\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

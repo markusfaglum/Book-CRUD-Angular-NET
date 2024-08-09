@@ -1,5 +1,6 @@
 ﻿using Book_API_DotNET.Data;
 using Book_API_DotNET.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Book_API_DotNET.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class BookController : ControllerBase
     {
@@ -65,11 +67,11 @@ namespace Book_API_DotNET.Controllers
             var dbBook = await context.Books.FindAsync(id);
             if (dbBook == null)
             {
-                return NotFound("Could not find book with id: " + id);
+                return NotFound();
             }
             context.Books.Remove(dbBook);
             await context.SaveChangesAsync();
-            return Ok("Deleted book, id: " + dbBook.Id + " title: " + dbBook.Title);
+            return Ok(new { message = $"Deleted book, id: {dbBook.Id}, title: {dbBook.Title}" });
         }
 
     };
